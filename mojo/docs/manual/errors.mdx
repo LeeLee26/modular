@@ -384,7 +384,7 @@ type of error condition and propagates all others:
 import sys
 import time
 
-struct ConditionalTimer:
+struct ConditionalTimer(Copyable):
     var start_time: Int
 
     fn __init__(out self):
@@ -442,21 +442,22 @@ Beginning execution
 i = 1
 j = 1
 Ending execution
-Elapsed time: 105.0 milliseconds
+Elapsed time: 100.618 milliseconds
 
 Beginning execution
 i = 2
 Suppressing error: just a warning
-Elapsed time: 106.0 milliseconds
+Elapsed time: 104.149 milliseconds
 
 Beginning execution
 i = 3
 continue executed
-Elapsed time: 106.0 milliseconds
+Elapsed time: 105.086 milliseconds
 
 Beginning execution
 i = 4
 Propagating error
-Elapsed time: 106.0 milliseconds
+Elapsed time: 101.859 milliseconds
 Unhandled exception caught during execution: really bad
+mojo: error: execution exited with a non-zero result: 1
 ```
